@@ -491,6 +491,8 @@ Matchers.tests.cpp:<line number>|nexpression failed|n  CHECK_THAT( testStringFor
 ##teamcity[testFinished name='Scenario: Do that thing with the thing' duration="{duration}"]
 ##teamcity[testStarted name='Scenario: This is a really long scenario name to see how the list command deals with wrapping']
 ##teamcity[testFinished name='Scenario: This is a really long scenario name to see how the list command deals with wrapping' duration="{duration}"]
+##teamcity[testStarted name='Scenario: Use BDD style require and check macros']
+##teamcity[testFinished name='Scenario: Use BDD style require and check macros' duration="{duration}"]
 ##teamcity[testStarted name='Scenario: Vector resizing affects size and capacity']
 ##teamcity[testFinished name='Scenario: Vector resizing affects size and capacity' duration="{duration}"]
 ##teamcity[testStarted name='Sends stuff to stdout and stderr']

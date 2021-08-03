@@ -54,9 +54,17 @@
   #if !defined(CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
     #define CATCH_STATIC_REQUIRE( ... )       static_assert(   __VA_ARGS__ ,      #__VA_ARGS__ );     CATCH_SUCCEED( #__VA_ARGS__ )
     #define CATCH_STATIC_REQUIRE_FALSE( ... ) static_assert( !(__VA_ARGS__), "!(" #__VA_ARGS__ ")" ); CATCH_SUCCEED( #__VA_ARGS__ )
+    #define CATCH_THEN_STATIC_REQUIRE( desc, ... )       INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_STATIC_REQUIRE, desc, __VA_ARGS__ )
+    #define CATCH_THEN_STATIC_REQUIRE_FALSE( desc, ... ) INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_STATIC_REQUIRE_FALSE, desc, __VA_ARGS__ )
+    #define CATCH_AND_STATIC_REQUIRE( desc, ... )        INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_STATIC_REQUIRE, desc, __VA_ARGS__ )
+    #define CATCH_AND_STATIC_REQUIRE_FALSE( desc, ... )  INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_STATIC_REQUIRE_FALSE, desc, __VA_ARGS__ )
   #else
     #define CATCH_STATIC_REQUIRE( ... )       CATCH_REQUIRE( __VA_ARGS__ )
     #define CATCH_STATIC_REQUIRE_FALSE( ... ) CATCH_REQUIRE_FALSE( __VA_ARGS__ )
+    #define CATCH_THEN_STATIC_REQUIRE( desc, ... )       CATCH_THEN_REQUIRE( desc, __VA_ARGS__ )
+    #define CATCH_THEN_STATIC_REQUIRE_FALSE( desc, ... ) CATCH_THEN_REQUIRE_FALSE( desc, __VA_ARGS__ )
+    #define CATCH_AND_STATIC_REQUIRE( desc, ... )        CATCH_AND_REQUIRE( desc, __VA_ARGS__ )
+    #define CATCH_AND_STATIC_REQUIRE_FALSE( desc, ... )  CATCH_AND_REQUIRE_FALSE( desc, __VA_ARGS__ )
   #endif
 
 
@@ -69,6 +77,76 @@
   #define CATCH_AND_WHEN( desc )  INTERNAL_CATCH_DYNAMIC_SECTION( " And when: " << desc )
   #define CATCH_THEN( desc )      INTERNAL_CATCH_DYNAMIC_SECTION( "     Then: " << desc )
   #define CATCH_AND_THEN( desc )  INTERNAL_CATCH_DYNAMIC_SECTION( "      And: " << desc )
+
+  // "BDD-style" THEN_REQUIRE macros
+  #define CATCH_THEN_REQUIRE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_REQUIRE, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_REQUIRE_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_REQUIRE_FALSE, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_REQUIRE_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_REQUIRE_THROWS, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_REQUIRE_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_REQUIRE_THROWS_AS, desc, expr, exceptionType )
+
+  #define CATCH_THEN_REQUIRE_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_REQUIRE_NOTHROW, desc, __VA_ARGS__ )
+
+  // "BDD-style" THEN_CHECK macros
+  #define CATCH_THEN_CHECK( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_CHECK, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_CHECK_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_CHECK_FALSE, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_CHECK_NOFAIL( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_CHECK_NOFAIL, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_CHECK_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_CHECK_THROWS, desc, __VA_ARGS__ )
+
+  #define CATCH_THEN_CHECK_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_CHECK_THROWS_AS, desc, expr, exceptionType )
+
+  #define CATCH_THEN_CHECK_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_THEN, CATCH_CHECK_NOTHROW, desc, __VA_ARGS__ )
+
+  // "BDD-style" AND_REQUIRE macros
+  #define CATCH_AND_REQUIRE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_REQUIRE, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_REQUIRE_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_REQUIRE_FALSE, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_REQUIRE_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_REQUIRE_THROWS, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_REQUIRE_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_REQUIRE_THROWS_AS, desc, expr, exceptionType )
+  
+  #define CATCH_AND_REQUIRE_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_REQUIRE_NOTHROW, desc, __VA_ARGS__ )
+  
+  // "BDD-style" AND_CHECK macros
+  #define CATCH_AND_CHECK( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_CHECK, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_CHECK_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_CHECK_FALSE, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_CHECK_NOFAIL( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_CHECK_NOFAIL, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_CHECK_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_CHECK_THROWS, desc, __VA_ARGS__ )
+  
+  #define CATCH_AND_CHECK_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_CHECK_THROWS_AS, desc, expr, exceptionType )
+  
+  #define CATCH_AND_CHECK_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( CATCH_AND_THEN, CATCH_CHECK_NOTHROW, desc, __VA_ARGS__ )
 
 #elif defined(CATCH_CONFIG_PREFIX_ALL) && defined(CATCH_CONFIG_DISABLE) // ^^ prefixed, implemented | vv prefixed, disabled
 
@@ -101,6 +179,10 @@
 
   #define CATCH_STATIC_REQUIRE( ... )       (void)(0)
   #define CATCH_STATIC_REQUIRE_FALSE( ... ) (void)(0)
+  #define CATCH_THEN_STATIC_REQUIRE( desc, ... )        (void)(0)
+  #define CATCH_THEN_STATIC_REQUIRE_FALSE( desc, ... )  (void)(0)
+  #define CATCH_AND_STATIC_REQUIRE( desc, ... )         (void)(0)
+  #define CATCH_AND_STATIC_REQUIRE_FALSE( desc, ... )   (void)(0)
 
   // "BDD-style" convenience wrappers
   #define CATCH_SCENARIO( ... ) INTERNAL_CATCH_TESTCASE_NO_REGISTRATION(INTERNAL_CATCH_UNIQUE_NAME( CATCH2_INTERNAL_TEST_ ))
@@ -111,6 +193,28 @@
   #define CATCH_AND_WHEN( desc )
   #define CATCH_THEN( desc )
   #define CATCH_AND_THEN( desc )
+  #define CATCH_THEN_REQUIRE( desc, ... ) (void)(0)
+  #define CATCH_THEN_REQUIRE_FALSE( desc, ... ) (void)(0)
+  #define CATCH_THEN_REQUIRE_THROWS( desc, ... ) (void)(0)
+  #define CATCH_THEN_REQUIRE_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define CATCH_THEN_REQUIRE_NOTHROW( desc, ... ) (void)(0)
+  #define CATCH_THEN_CHECK( desc, ... ) (void)(0)
+  #define CATCH_THEN_CHECK_FALSE( desc, ... ) (void)(0)
+  #define CATCH_THEN_CHECK_NOFAIL( desc, ... ) (void)(0)
+  #define CATCH_THEN_CHECK_THROWS( desc, ... ) (void)(0)
+  #define CATCH_THEN_CHECK_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define CATCH_THEN_CHECK_NOTHROW( desc, ... ) (void)(0)
+  #define CATCH_AND_REQUIRE( desc, ... ) (void)(0)
+  #define CATCH_AND_REQUIRE_FALSE( desc, ... ) (void)(0)
+  #define CATCH_AND_REQUIRE_THROWS( desc, ... ) (void)(0)
+  #define CATCH_AND_REQUIRE_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define CATCH_AND_REQUIRE_NOTHROW( desc, ... ) (void)(0)
+  #define CATCH_AND_CHECK( desc, ... ) (void)(0)
+  #define CATCH_AND_CHECK_FALSE( desc, ... ) (void)(0)
+  #define CATCH_AND_CHECK_NOFAIL( desc, ... ) (void)(0)
+  #define CATCH_AND_CHECK_THROWS( desc, ... ) (void)(0)
+  #define CATCH_AND_CHECK_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define CATCH_AND_CHECK_NOTHROW( desc, ... ) (void)(0)
 
 #elif !defined(CATCH_CONFIG_PREFIX_ALL) && !defined(CATCH_CONFIG_DISABLE) // ^^ prefixed, disabled | vv unprefixed, implemented
 
@@ -145,9 +249,17 @@
   #if !defined(CATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
     #define STATIC_REQUIRE( ... )       static_assert(   __VA_ARGS__,  #__VA_ARGS__ ); SUCCEED( #__VA_ARGS__ )
     #define STATIC_REQUIRE_FALSE( ... ) static_assert( !(__VA_ARGS__), "!(" #__VA_ARGS__ ")" ); SUCCEED( "!(" #__VA_ARGS__ ")" )
+    #define THEN_STATIC_REQUIRE( desc, ... )        INTERNAL_CATCH_BDD_TEST( THEN, STATIC_REQUIRE, desc, __VA_ARGS__ )
+    #define THEN_STATIC_REQUIRE_FALSE( desc, ... )  INTERNAL_CATCH_BDD_TEST( THEN, STATIC_REQUIRE_FALSE, desc, __VA_ARGS__ )
+    #define AND_STATIC_REQUIRE( desc, ... )         INTERNAL_CATCH_BDD_TEST( AND_THEN, STATIC_REQUIRE, desc, __VA_ARGS__ )
+    #define AND_STATIC_REQUIRE_FALSE( desc, ... )   INTERNAL_CATCH_BDD_TEST( AND_THEN, STATIC_REQUIRE_FALSE, desc, __VA_ARGS__ )
   #else
     #define STATIC_REQUIRE( ... )       REQUIRE( __VA_ARGS__ )
     #define STATIC_REQUIRE_FALSE( ... ) REQUIRE_FALSE( __VA_ARGS__ )
+    #define THEN_STATIC_REQUIRE( desc, ... )        THEN_REQUIRE( desc, __VA_ARGS__ )
+    #define THEN_STATIC_REQUIRE_FALSE( desc, ... )  THEN_REQUIRE_FALSE( desc, __VA_ARGS__ )
+    #define AND_STATIC_REQUIRE( desc, ... )         AND_REQUIRE( desc, __VA_ARGS__ )
+    #define AND_STATIC_REQUIRE_FALSE( desc, ... )   AND_REQUIRE_FALSE( desc, __VA_ARGS__ )
   #endif
 
   // "BDD-style" convenience wrappers
@@ -159,6 +271,76 @@
   #define AND_WHEN( desc )  INTERNAL_CATCH_DYNAMIC_SECTION( " And when: " << desc )
   #define THEN( desc )      INTERNAL_CATCH_DYNAMIC_SECTION( "     Then: " << desc )
   #define AND_THEN( desc )  INTERNAL_CATCH_DYNAMIC_SECTION( "      And: " << desc )
+
+// "BDD-style" THEN_REQUIRE macros
+  #define THEN_REQUIRE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, REQUIRE, desc, __VA_ARGS__ )
+  
+  #define THEN_REQUIRE_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, REQUIRE_FALSE, desc, __VA_ARGS__ )
+  
+  #define THEN_REQUIRE_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, REQUIRE_THROWS, desc, __VA_ARGS__ )
+  
+  #define THEN_REQUIRE_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, REQUIRE_THROWS_AS, desc, expr, exceptionType )
+  
+  #define THEN_REQUIRE_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, REQUIRE_NOTHROW, desc, __VA_ARGS__ )
+  
+  // "BDD-style" THEN_CHECK macros
+  #define THEN_CHECK( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, CHECK, desc, __VA_ARGS__ )
+  
+  #define THEN_CHECK_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, CHECK_FALSE, desc, __VA_ARGS__ )
+  
+  #define THEN_CHECK_NOFAIL( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, CHECK_NOFAIL, desc, __VA_ARGS__ )
+  
+  #define THEN_CHECK_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, CHECK_THROWS, desc, __VA_ARGS__ )
+  
+  #define THEN_CHECK_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, CHECK_THROWS_AS, desc, expr, exceptionType )
+  
+  #define THEN_CHECK_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( THEN, CHECK_NOTHROW, desc, __VA_ARGS__ )
+  
+  // "BDD-style" AND_REQUIRE macros
+  #define AND_REQUIRE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, REQUIRE, desc, __VA_ARGS__ )
+  
+  #define AND_REQUIRE_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, REQUIRE_FALSE, desc, __VA_ARGS__ )
+  
+  #define AND_REQUIRE_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, REQUIRE_THROWS, desc, __VA_ARGS__ )
+  
+  #define AND_REQUIRE_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, REQUIRE_THROWS_AS, desc, expr, exceptionType )
+  
+  #define AND_REQUIRE_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, REQUIRE_NOTHROW, desc, __VA_ARGS__ )
+  
+  // "BDD-style" AND_CHECK macros
+  #define AND_CHECK( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, CHECK, desc, __VA_ARGS__ )
+  
+  #define AND_CHECK_FALSE( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, CHECK_FALSE, desc, __VA_ARGS__ )
+  
+  #define AND_CHECK_NOFAIL( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, CHECK_NOFAIL, desc, __VA_ARGS__ )
+  
+  #define AND_CHECK_THROWS( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, CHECK_THROWS, desc, __VA_ARGS__ )
+  
+  #define AND_CHECK_THROWS_AS( desc, expr, exceptionType ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, CHECK_THROWS_AS, desc, expr, exceptionType )
+  
+  #define AND_CHECK_NOTHROW( desc, ... ) \
+    INTERNAL_CATCH_BDD_TEST( AND_THEN, CHECK_NOTHROW, desc, __VA_ARGS__ )
 
 #elif !defined(CATCH_CONFIG_PREFIX_ALL) && defined(CATCH_CONFIG_DISABLE) // ^^ unprefixed, implemented | vv unprefixed, disabled
 
@@ -191,6 +373,10 @@
 
   #define STATIC_REQUIRE( ... )       (void)(0)
   #define STATIC_REQUIRE_FALSE( ... ) (void)(0)
+  #define THEN_STATIC_REQUIRE( ... )        (void)(0)
+  #define THEN_STATIC_REQUIRE_FALSE( ... )  (void)(0)
+  #define AND_STATIC_REQUIRE( ... )        (void)(0)
+  #define AND_STATIC_REQUIRE_FALSE( ... )  (void)(0)
 
   // "BDD-style" convenience wrappers
   #define SCENARIO( ... ) INTERNAL_CATCH_TESTCASE_NO_REGISTRATION(INTERNAL_CATCH_UNIQUE_NAME( CATCH2_INTERNAL_TEST_ ) )
@@ -202,6 +388,28 @@
   #define AND_WHEN( desc )
   #define THEN( desc )
   #define AND_THEN( desc )
+  #define THEN_REQUIRE( desc, ... ) (void)(0)
+  #define THEN_REQUIRE_FALSE( desc, ... ) (void)(0)
+  #define THEN_REQUIRE_THROWS( desc, ... ) (void)(0)
+  #define THEN_REQUIRE_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define THEN_REQUIRE_NOTHROW( desc, ... ) (void)(0)
+  #define THEN_CHECK( desc, ... ) (void)(0)
+  #define THEN_CHECK_FALSE( desc, ... ) (void)(0)
+  #define THEN_CHECK_NOFAIL( desc, ... ) (void)(0)
+  #define THEN_CHECK_THROWS( desc, ... ) (void)(0)
+  #define THEN_CHECK_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define THEN_CHECK_NOTHROW( desc, ... ) (void)(0)
+  #define AND_REQUIRE( desc, ... ) (void)(0)
+  #define AND_REQUIRE_FALSE( desc, ... ) (void)(0)
+  #define AND_REQUIRE_THROWS( desc, ... ) (void)(0)
+  #define AND_REQUIRE_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define AND_REQUIRE_NOTHROW( desc, ... ) (void)(0)
+  #define AND_CHECK( desc, ... ) (void)(0)
+  #define AND_CHECK_FALSE( desc, ... ) (void)(0)
+  #define AND_CHECK_NOFAIL( desc, ... ) (void)(0)
+  #define AND_CHECK_THROWS( desc, ... ) (void)(0)
+  #define AND_CHECK_THROWS_AS( desc, expr, exceptionType ) (void)(0)
+  #define AND_CHECK_NOTHROW( desc, ... ) (void)(0)
 
 #endif // ^^ unprefixed, disabled
 

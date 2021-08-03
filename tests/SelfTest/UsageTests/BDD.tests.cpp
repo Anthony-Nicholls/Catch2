@@ -49,27 +49,23 @@ SCENARIO( "Vector resizing affects size and capacity",
 
         WHEN( "it is made larger" ) {
             v.resize( 10 );
-            THEN( "the size and capacity go up" ) {
-                REQUIRE( v.size() == 10 );
-                REQUIRE( v.capacity() >= 10 );
-
-                AND_WHEN( "it is made smaller again" ) {
-                    v.resize( 5 );
-                    THEN(
-                        "the size goes down but the capacity stays the same" ) {
-                        REQUIRE( v.size() == 5 );
-                        REQUIRE( v.capacity() >= 10 );
-                    }
-                }
+            
+            THEN_REQUIRE( "the size goes up", v.size() == 10 );
+            THEN_REQUIRE( "the capacity goes up", v.capacity() >= 10 );
+            
+            AND_WHEN( "it is made smaller again" ) {
+                v.resize( 5 );
+                
+                THEN_REQUIRE( "the size goes down", v.size() == 5 );
+                THEN_REQUIRE( "the capacity stays the same", v.capacity() >= 10 );
             }
         }
 
         WHEN( "we reserve more space" ) {
             v.reserve( 10 );
-            THEN( "The capacity is increased but the size remains the same" ) {
-                REQUIRE( v.capacity() >= 10 );
-                REQUIRE( v.size() == 0 );
-            }
+            
+            THEN_REQUIRE ( "the capacity goes up", v.capacity() >= 10 );
+            THEN_REQUIRE ( "the size stays the same", v.size() == 0 );
         }
     }
 }
@@ -97,6 +93,51 @@ SCENARIO_METHOD(Fixture,
             const int after(counter());
             THEN("Subsequently values are higher") {
                 REQUIRE(after > before);
+            }
+        }
+    }
+}
+
+SCENARIO( "Use BDD style require and check macros", "[bdd][rquire][check]" )
+{
+    GIVEN( "some conditions to check" )
+    {
+        const auto returnTrue = [](){ return true; };
+        const auto returnFalse = [](){ return false; };
+        const auto throwRuntimeError = [](){ throw std::runtime_error{""}; };
+        const auto doNothing = [](){ };
+        
+        WHEN( "they need to be checked using a BDD style" )
+        {
+            THEN_REQUIRE( "you can use THEN_REQUIRE", returnTrue() );
+            THEN_REQUIRE_FALSE( "you can use THEN_REQUIRE_FALSE", returnFalse() );
+            THEN_REQUIRE_THROWS( "you can use THEN_REQUIRE_THROWS", throwRuntimeError() );
+            THEN_REQUIRE_THROWS_AS( "you can use THEN_REQUIRE_THROWS_AS", throwRuntimeError(), std::runtime_error );
+            THEN_REQUIRE_NOTHROW( "you can use THEN_REQUIRE_NOTHROW", doNothing() );
+            THEN_STATIC_REQUIRE( "you can use THEN_STATIC_REQUIRE", true );
+            THEN_STATIC_REQUIRE_FALSE( "you can use THEN_STATIC_REQUIRE_FALSE", false );
+            THEN_CHECK( "you can use THEN_CHECK", returnTrue() );
+            THEN_CHECK_FALSE( "you can use THEN_CHECK_FALSE", returnFalse() );
+            THEN_CHECK_NOFAIL( "you can use THEN_CHECK_NOFAIL", returnTrue() );
+            THEN_CHECK_THROWS( "you can use THEN_CHECK_THROWS", throwRuntimeError() );
+            THEN_CHECK_THROWS_AS( "you can use THEN_CHECK_THROWS_AS", throwRuntimeError(), std::runtime_error );
+            THEN_CHECK_NOTHROW( "you can use THEN_CHECK_NOTHROW", doNothing() );
+            
+            THEN( "some some condition is checked" )
+            {
+                AND_REQUIRE( "you can use AND_REQUIRE", returnTrue() );
+                AND_REQUIRE_FALSE( "you can use AND_REQUIRE_FALSE", returnFalse() );
+                AND_REQUIRE_THROWS( "you can use AND_REQUIRE_THROWS", throwRuntimeError() );
+                AND_REQUIRE_THROWS_AS( "you can use AND_REQUIRE_THROWS_AS", throwRuntimeError(), std::runtime_error );
+                AND_REQUIRE_NOTHROW( "you can use AND_REQUIRE_NOTHROW", doNothing() );
+                AND_STATIC_REQUIRE( "can use AND_STATIC_REQUIRE", true );
+                AND_STATIC_REQUIRE_FALSE( "can use AND_STATIC_REQUIRE_FALSE", false );
+                AND_CHECK( "you can use AND_CHECK", returnTrue() );
+                AND_CHECK_FALSE( "you can use AND_CHECK_FALSE", returnFalse() );
+                AND_CHECK_NOFAIL( "you can use AND_CHECK_NOFAIL", returnTrue() );
+                AND_CHECK_THROWS( "you can use AND_CHECK_THROWS", throwRuntimeError() );
+                AND_CHECK_THROWS_AS( "you can use AND_CHECK_THROWS_AS", throwRuntimeError(), std::runtime_error );
+                AND_CHECK_NOTHROW( "you can use AND_CHECK_NOTHROW", doNothing() );
             }
         }
     }

@@ -193,6 +193,7 @@ Nor would this
 :test-result: PASS Scenario: BDD tests requiring Fixtures to provide commonly-accessed data or methods
 :test-result: PASS Scenario: Do that thing with the thing
 :test-result: PASS Scenario: This is a really long scenario name to see how the list command deals with wrapping
+:test-result: PASS Scenario: Use BDD style require and check macros
 :test-result: PASS Scenario: Vector resizing affects size and capacity
 A string sent directly to stdout
 A string sent directly to stderr

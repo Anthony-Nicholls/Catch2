@@ -2588,20 +2588,80 @@ ok {test-number} - itDoesThis() for: true
 ok {test-number} - itDoesThat() for: true
 # Scenario: This is a really long scenario name to see how the list command deals with wrapping
 ok {test-number} - with 1 message: 'boo!'
+# Scenario: Use BDD style require and check macros
+ok {test-number} - returnTrue() for: true
+# Scenario: Use BDD style require and check macros
+ok {test-number} - !(returnFalse()) for: !false
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError(), std::runtime_error
+# Scenario: Use BDD style require and check macros
+ok {test-number} - doNothing()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - with 1 message: 'true'
+# Scenario: Use BDD style require and check macros
+ok {test-number} - with 1 message: '!(false)'
+# Scenario: Use BDD style require and check macros
+ok {test-number} - returnTrue() for: true
+# Scenario: Use BDD style require and check macros
+ok {test-number} - !(returnFalse()) for: !false
+# Scenario: Use BDD style require and check macros
+ok {test-number} - returnTrue() for: true
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError(), std::runtime_error
+# Scenario: Use BDD style require and check macros
+ok {test-number} - doNothing()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - returnTrue() for: true
+# Scenario: Use BDD style require and check macros
+ok {test-number} - !(returnFalse()) for: !false
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError(), std::runtime_error
+# Scenario: Use BDD style require and check macros
+ok {test-number} - doNothing()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - with 1 message: 'true'
+# Scenario: Use BDD style require and check macros
+ok {test-number} - with 1 message: '!(false)'
+# Scenario: Use BDD style require and check macros
+ok {test-number} - returnTrue() for: true
+# Scenario: Use BDD style require and check macros
+ok {test-number} - !(returnFalse()) for: !false
+# Scenario: Use BDD style require and check macros
+ok {test-number} - returnTrue() for: true
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError()
+# Scenario: Use BDD style require and check macros
+ok {test-number} - throwRuntimeError(), std::runtime_error
+# Scenario: Use BDD style require and check macros
+ok {test-number} - doNothing()
 # Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.size() == 0 for: 0 == 0
 # Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.size() == 10 for: 10 == 10
 # Scenario: Vector resizing affects size and capacity
+ok {test-number} - v.size() == 0 for: 0 == 0
+# Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.capacity() >= 10 for: 10 >= 10
 # Scenario: Vector resizing affects size and capacity
+ok {test-number} - v.size() == 0 for: 0 == 0
+# Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.size() == 5 for: 5 == 5
+# Scenario: Vector resizing affects size and capacity
+ok {test-number} - v.size() == 0 for: 0 == 0
 # Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.capacity() >= 10 for: 10 >= 10
 # Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.size() == 0 for: 0 == 0
 # Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.capacity() >= 10 for: 10 >= 10
+# Scenario: Vector resizing affects size and capacity
+ok {test-number} - v.size() == 0 for: 0 == 0
 # Scenario: Vector resizing affects size and capacity
 ok {test-number} - v.size() == 0 for: 0 == 0
 A string sent directly to stdout
@@ -4242,5 +4302,5 @@ ok {test-number} - q3 == 23. for: 23.0 == 23.0
 ok {test-number} -
 # xmlentitycheck
 ok {test-number} -
-1..2120
+1..2150
 

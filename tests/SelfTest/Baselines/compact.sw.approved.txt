@@ -1448,13 +1448,43 @@ BDD.tests.cpp:<line number>: passed: after > before for: 1 > 0
 BDD.tests.cpp:<line number>: passed: itDoesThis() for: true
 BDD.tests.cpp:<line number>: passed: itDoesThat() for: true
 BDD.tests.cpp:<line number>: passed: with 1 message: 'boo!'
+BDD.tests.cpp:<line number>: passed: returnTrue() for: true
+BDD.tests.cpp:<line number>: passed: !(returnFalse()) for: !false
+BDD.tests.cpp:<line number>: passed: throwRuntimeError()
+BDD.tests.cpp:<line number>: passed: throwRuntimeError(), std::runtime_error
+BDD.tests.cpp:<line number>: passed: doNothing()
+BDD.tests.cpp:<line number>: passed: with 1 message: 'true'
+BDD.tests.cpp:<line number>: passed: with 1 message: '!(false)'
+BDD.tests.cpp:<line number>: passed: returnTrue() for: true
+BDD.tests.cpp:<line number>: passed: !(returnFalse()) for: !false
+BDD.tests.cpp:<line number>: passed: returnTrue() for: true
+BDD.tests.cpp:<line number>: passed: throwRuntimeError()
+BDD.tests.cpp:<line number>: passed: throwRuntimeError(), std::runtime_error
+BDD.tests.cpp:<line number>: passed: doNothing()
+BDD.tests.cpp:<line number>: passed: returnTrue() for: true
+BDD.tests.cpp:<line number>: passed: !(returnFalse()) for: !false
+BDD.tests.cpp:<line number>: passed: throwRuntimeError()
+BDD.tests.cpp:<line number>: passed: throwRuntimeError(), std::runtime_error
+BDD.tests.cpp:<line number>: passed: doNothing()
+BDD.tests.cpp:<line number>: passed: with 1 message: 'true'
+BDD.tests.cpp:<line number>: passed: with 1 message: '!(false)'
+BDD.tests.cpp:<line number>: passed: returnTrue() for: true
+BDD.tests.cpp:<line number>: passed: !(returnFalse()) for: !false
+BDD.tests.cpp:<line number>: passed: returnTrue() for: true
+BDD.tests.cpp:<line number>: passed: throwRuntimeError()
+BDD.tests.cpp:<line number>: passed: throwRuntimeError(), std::runtime_error
+BDD.tests.cpp:<line number>: passed: doNothing()
 BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 BDD.tests.cpp:<line number>: passed: v.size() == 10 for: 10 == 10
+BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 BDD.tests.cpp:<line number>: passed: v.capacity() >= 10 for: 10 >= 10
+BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 BDD.tests.cpp:<line number>: passed: v.size() == 5 for: 5 == 5
+BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 BDD.tests.cpp:<line number>: passed: v.capacity() >= 10 for: 10 >= 10
 BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 BDD.tests.cpp:<line number>: passed: v.capacity() >= 10 for: 10 >= 10
+BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 BDD.tests.cpp:<line number>: passed: v.size() == 0 for: 0 == 0
 A string sent directly to stdout
 A string sent directly to stderr

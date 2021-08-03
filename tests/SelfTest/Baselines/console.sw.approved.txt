@@ -10250,6 +10250,355 @@ with message:
   boo!
 
 -------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_REQUIRE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE( returnTrue() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_REQUIRE_FALSE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_FALSE( returnFalse() )
+with expansion:
+  !false
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_REQUIRE_THROWS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_THROWS( throwRuntimeError() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_REQUIRE_THROWS_AS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_THROWS_AS( throwRuntimeError(), std::runtime_error )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_REQUIRE_NOTHROW
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_NOTHROW( doNothing() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_STATIC_REQUIRE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+with message:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_STATIC_REQUIRE_FALSE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+with message:
+  !(false)
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_CHECK
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK( returnTrue() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_CHECK_FALSE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_FALSE( returnFalse() )
+with expansion:
+  !false
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_CHECK_NOFAIL
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_NOFAIL( returnTrue() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_CHECK_THROWS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_THROWS( throwRuntimeError() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_CHECK_THROWS_AS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_THROWS_AS( throwRuntimeError(), std::runtime_error )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: you can use THEN_CHECK_NOTHROW
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_NOTHROW( doNothing() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_REQUIRE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE( returnTrue() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_REQUIRE_FALSE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_FALSE( returnFalse() )
+with expansion:
+  !false
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_REQUIRE_THROWS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_THROWS( throwRuntimeError() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_REQUIRE_THROWS_AS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_THROWS_AS( throwRuntimeError(), std::runtime_error )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_REQUIRE_NOTHROW
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE_NOTHROW( doNothing() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: can use AND_STATIC_REQUIRE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+with message:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: can use AND_STATIC_REQUIRE_FALSE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+with message:
+  !(false)
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_CHECK
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK( returnTrue() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_CHECK_FALSE
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_FALSE( returnFalse() )
+with expansion:
+  !false
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_CHECK_NOFAIL
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_NOFAIL( returnTrue() )
+with expansion:
+  true
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_CHECK_THROWS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_THROWS( throwRuntimeError() )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_CHECK_THROWS_AS
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_THROWS_AS( throwRuntimeError(), std::runtime_error )
+
+-------------------------------------------------------------------------------
+Scenario: Use BDD style require and check macros
+      Given: some conditions to check
+       When: they need to be checked using a BDD style
+       Then: some some condition is checked
+        And: you can use AND_CHECK_NOTHROW
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  CHECK_NOTHROW( doNothing() )
+
+-------------------------------------------------------------------------------
 Scenario: Vector resizing affects size and capacity
       Given: an empty vector
 -------------------------------------------------------------------------------
@@ -10265,7 +10614,7 @@ with expansion:
 Scenario: Vector resizing affects size and capacity
       Given: an empty vector
        When: it is made larger
-       Then: the size and capacity go up
+       Then: the size goes up
 -------------------------------------------------------------------------------
 BDD.tests.cpp:<line number>
 ...............................................................................
@@ -10275,6 +10624,27 @@ BDD.tests.cpp:<line number>: PASSED:
 with expansion:
   10 == 10
 
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE( v.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
+       When: it is made larger
+       Then: the capacity goes up
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
 BDD.tests.cpp:<line number>: PASSED:
   REQUIRE( v.capacity() >= 10 )
 with expansion:
@@ -10283,10 +10653,21 @@ with expansion:
 -------------------------------------------------------------------------------
 Scenario: Vector resizing affects size and capacity
       Given: an empty vector
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE( v.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
        When: it is made larger
-       Then: the size and capacity go up
    And when: it is made smaller again
-       Then: the size goes down but the capacity stays the same
+       Then: the size goes down
 -------------------------------------------------------------------------------
 BDD.tests.cpp:<line number>
 ...............................................................................
@@ -10295,6 +10676,28 @@ BDD.tests.cpp:<line number>: PASSED:
   REQUIRE( v.size() == 5 )
 with expansion:
   5 == 5
+
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE( v.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
+       When: it is made larger
+   And when: it is made smaller again
+       Then: the capacity stays the same
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
 
 BDD.tests.cpp:<line number>: PASSED:
   REQUIRE( v.capacity() >= 10 )
@@ -10317,7 +10720,7 @@ with expansion:
 Scenario: Vector resizing affects size and capacity
       Given: an empty vector
        When: we reserve more space
-       Then: The capacity is increased but the size remains the same
+       Then: the capacity goes up
 -------------------------------------------------------------------------------
 BDD.tests.cpp:<line number>
 ...............................................................................
@@ -10326,6 +10729,27 @@ BDD.tests.cpp:<line number>: PASSED:
   REQUIRE( v.capacity() >= 10 )
 with expansion:
   10 >= 10
+
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
+
+BDD.tests.cpp:<line number>: PASSED:
+  REQUIRE( v.size() == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+Scenario: Vector resizing affects size and capacity
+      Given: an empty vector
+       When: we reserve more space
+       Then: the size stays the same
+-------------------------------------------------------------------------------
+BDD.tests.cpp:<line number>
+...............................................................................
 
 BDD.tests.cpp:<line number>: PASSED:
   REQUIRE( v.size() == 0 )
@@ -16933,6 +17357,6 @@ Misc.tests.cpp:<line number>
 Misc.tests.cpp:<line number>: PASSED:
 
 ===============================================================================
-test cases:  368 |  276 passed |  86 failed |  6 failed as expected
-assertions: 2120 | 1951 passed | 146 failed | 23 failed as expected
+test cases:  369 |  277 passed |  86 failed |  6 failed as expected
+assertions: 2150 | 1981 passed | 146 failed | 23 failed as expected
 

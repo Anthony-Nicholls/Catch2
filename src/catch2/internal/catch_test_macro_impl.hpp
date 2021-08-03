@@ -140,6 +140,9 @@
         INTERNAL_CATCH_REACT( catchAssertionHandler ) \
     } while( false )
 
+#define INTERNAL_CATCH_BDD_TEST( sectionMacro, testMacro, desc, ...) \
+  do { sectionMacro( desc ) { testMacro( __VA_ARGS__ ); } } while( false )
+
 #endif // CATCH_CONFIG_DISABLE
 
 #endif // CATCH_TEST_MACRO_IMPL_HPP_INCLUDED

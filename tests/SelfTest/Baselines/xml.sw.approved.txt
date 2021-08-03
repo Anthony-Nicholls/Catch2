@@ -12255,6 +12255,458 @@ All available test cases:
       </Section>
       <OverallResult success="true"/>
     </TestCase>
+    <TestCase name="Scenario: Use BDD style require and check macros" tags="[bdd][check][rquire]" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                returnTrue()
+              </Original>
+              <Expanded>
+                true
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_REQUIRE_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="REQUIRE_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                !(returnFalse())
+              </Original>
+              <Expanded>
+                !false
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_REQUIRE_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="REQUIRE_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                throwRuntimeError()
+              </Original>
+              <Expanded>
+                throwRuntimeError()
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_REQUIRE_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="REQUIRE_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                throwRuntimeError(), std::runtime_error
+              </Original>
+              <Expanded>
+                throwRuntimeError(), std::runtime_error
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_REQUIRE_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="REQUIRE_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                doNothing()
+              </Original>
+              <Expanded>
+                doNothing()
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_STATIC_REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_STATIC_REQUIRE_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_CHECK" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="CHECK" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                returnTrue()
+              </Original>
+              <Expanded>
+                true
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_CHECK_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="CHECK_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                !(returnFalse())
+              </Original>
+              <Expanded>
+                !false
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_CHECK_NOFAIL" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="CHECK_NOFAIL" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                returnTrue()
+              </Original>
+              <Expanded>
+                true
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_CHECK_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="CHECK_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                throwRuntimeError()
+              </Original>
+              <Expanded>
+                throwRuntimeError()
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_CHECK_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="CHECK_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                throwRuntimeError(), std::runtime_error
+              </Original>
+              <Expanded>
+                throwRuntimeError(), std::runtime_error
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: you can use THEN_CHECK_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Expression success="true" type="CHECK_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Original>
+                doNothing()
+              </Original>
+              <Expanded>
+                doNothing()
+              </Expanded>
+            </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  returnTrue()
+                </Original>
+                <Expanded>
+                  true
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_REQUIRE_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  !(returnFalse())
+                </Original>
+                <Expanded>
+                  !false
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_REQUIRE_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  throwRuntimeError()
+                </Original>
+                <Expanded>
+                  throwRuntimeError()
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_REQUIRE_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  throwRuntimeError(), std::runtime_error
+                </Original>
+                <Expanded>
+                  throwRuntimeError(), std::runtime_error
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_REQUIRE_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  doNothing()
+                </Original>
+                <Expanded>
+                  doNothing()
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: can use AND_STATIC_REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: can use AND_STATIC_REQUIRE_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_CHECK" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="CHECK" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  returnTrue()
+                </Original>
+                <Expanded>
+                  true
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_CHECK_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="CHECK_FALSE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  !(returnFalse())
+                </Original>
+                <Expanded>
+                  !false
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_CHECK_NOFAIL" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="CHECK_NOFAIL" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  returnTrue()
+                </Original>
+                <Expanded>
+                  true
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_CHECK_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="CHECK_THROWS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  throwRuntimeError()
+                </Original>
+                <Expanded>
+                  throwRuntimeError()
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_CHECK_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="CHECK_THROWS_AS" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  throwRuntimeError(), std::runtime_error
+                </Original>
+                <Expanded>
+                  throwRuntimeError(), std::runtime_error
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: some conditions to check" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Section name="When: they need to be checked using a BDD style" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: some some condition is checked" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="And: you can use AND_CHECK_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="CHECK_NOTHROW" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  doNothing()
+                </Original>
+                <Expanded>
+                  doNothing()
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="1" failures="0" expectedFailures="0"/>
+      </Section>
+      <OverallResult success="true"/>
+    </TestCase>
     <TestCase name="Scenario: Vector resizing affects size and capacity" tags="[bdd][capacity][size][vector]" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
       <Section name="Given: an empty vector" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
         <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
@@ -12266,7 +12718,7 @@ All available test cases:
           </Expanded>
         </Expression>
         <Section name="When: it is made larger" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
-          <Section name="Then: the size and capacity go up" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: the size goes up" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
             <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
               <Original>
                 v.size() == 10
@@ -12275,6 +12727,23 @@ All available test cases:
                 10 == 10
               </Expanded>
             </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="2" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: an empty vector" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Original>
+            v.size() == 0
+          </Original>
+          <Expanded>
+            0 == 0
+          </Expanded>
+        </Expression>
+        <Section name="When: it is made larger" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: the capacity goes up" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
             <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
               <Original>
                 v.capacity() >= 10
@@ -12283,33 +12752,67 @@ All available test cases:
                 10 >= 10
               </Expanded>
             </Expression>
-            <Section name="And when: it is made smaller again" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
-              <Section name="Then: the size goes down but the capacity stays the same" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
-                <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
-                  <Original>
-                    v.size() == 5
-                  </Original>
-                  <Expanded>
-                    5 == 5
-                  </Expanded>
-                </Expression>
-                <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
-                  <Original>
-                    v.capacity() >= 10
-                  </Original>
-                  <Expanded>
-                    10 >= 10
-                  </Expanded>
-                </Expression>
-                <OverallResults successes="2" failures="0" expectedFailures="0"/>
-              </Section>
-              <OverallResults successes="2" failures="0" expectedFailures="0"/>
-            </Section>
-            <OverallResults successes="4" failures="0" expectedFailures="0"/>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
           </Section>
-          <OverallResults successes="4" failures="0" expectedFailures="0"/>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
         </Section>
-        <OverallResults successes="5" failures="0" expectedFailures="0"/>
+        <OverallResults successes="2" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: an empty vector" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Original>
+            v.size() == 0
+          </Original>
+          <Expanded>
+            0 == 0
+          </Expanded>
+        </Expression>
+        <Section name="When: it is made larger" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="And when: it is made smaller again" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="Then: the size goes down" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  v.size() == 5
+                </Original>
+                <Expanded>
+                  5 == 5
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="2" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: an empty vector" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Original>
+            v.size() == 0
+          </Original>
+          <Expanded>
+            0 == 0
+          </Expanded>
+        </Expression>
+        <Section name="When: it is made larger" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="And when: it is made smaller again" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+            <Section name="Then: the capacity stays the same" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+              <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+                <Original>
+                  v.capacity() >= 10
+                </Original>
+                <Expanded>
+                  10 >= 10
+                </Expanded>
+              </Expression>
+              <OverallResults successes="1" failures="0" expectedFailures="0"/>
+            </Section>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="2" failures="0" expectedFailures="0"/>
       </Section>
       <Section name="Given: an empty vector" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
         <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
@@ -12321,7 +12824,7 @@ All available test cases:
           </Expanded>
         </Expression>
         <Section name="When: we reserve more space" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
-          <Section name="Then: The capacity is increased but the size remains the same" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: the capacity goes up" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
             <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
               <Original>
                 v.capacity() >= 10
@@ -12330,6 +12833,23 @@ All available test cases:
                 10 >= 10
               </Expanded>
             </Expression>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
+          </Section>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
+        </Section>
+        <OverallResults successes="2" failures="0" expectedFailures="0"/>
+      </Section>
+      <Section name="Given: an empty vector" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+        <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Original>
+            v.size() == 0
+          </Original>
+          <Expanded>
+            0 == 0
+          </Expanded>
+        </Expression>
+        <Section name="When: we reserve more space" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
+          <Section name="Then: the size stays the same" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
             <Expression success="true" type="REQUIRE" filename="tests/<exe-name>/UsageTests/BDD.tests.cpp" >
               <Original>
                 v.size() == 0
@@ -12338,11 +12858,11 @@ All available test cases:
                 0 == 0
               </Expanded>
             </Expression>
-            <OverallResults successes="2" failures="0" expectedFailures="0"/>
+            <OverallResults successes="1" failures="0" expectedFailures="0"/>
           </Section>
-          <OverallResults successes="2" failures="0" expectedFailures="0"/>
+          <OverallResults successes="1" failures="0" expectedFailures="0"/>
         </Section>
-        <OverallResults successes="3" failures="0" expectedFailures="0"/>
+        <OverallResults successes="2" failures="0" expectedFailures="0"/>
       </Section>
       <OverallResult success="true"/>
     </TestCase>
@@ -19927,9 +20447,9 @@ loose text artifact
       </Section>
       <OverallResult success="true"/>
     </TestCase>
-    <OverallResults successes="1951" failures="147" expectedFailures="23"/>
-    <OverallResultsCases successes="276" failures="86" expectedFailures="6"/>
+    <OverallResults successes="1981" failures="147" expectedFailures="23"/>
+    <OverallResultsCases successes="277" failures="86" expectedFailures="6"/>
   </Group>
-  <OverallResults successes="1951" failures="146" expectedFailures="23"/>
-  <OverallResultsCases successes="276" failures="86" expectedFailures="6"/>
+  <OverallResults successes="1981" failures="146" expectedFailures="23"/>
+  <OverallResultsCases successes="277" failures="86" expectedFailures="6"/>
 </Catch>
